@@ -1,32 +1,22 @@
 <template>
-    <header class="header">
+    <header id="top" class="header" @keydown.esc.window="closeMenu">
         <div class="container">
-            <div class="header__content">         
-                <div>
-                    <button class="nav-toggle">
-                        <span class="hamburger"></span>
-                    </button>
-                    <ul class="burger_menu">
-                        <li class="menu_item">
-                            <a href="#"><span class="menu_link">Home</span></a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#"><span class="menu_link">About Us</span></a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#"><span class="menu_link">Our Menu</span></a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#"><span class="menu_link">Pages</span></a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#"><span class="menu_link">Blog</span></a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#"><span class="menu_link">Contact Us</span></a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="header__content">
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    :aria-expanded="isOpen"
+                    aria-controls="mobile-menu"
+                    aria-label="Toggle navigation menu"
+                    @click="toggleMenu"
+                >
+                    <span class="hamburger"></span>
+                </button>
+                <BurgerMenu 
+                    :isMenuOpened="isOpen" 
+                    :toggleMenu="toggleMenu"
+                    :menuItems="menuItems"
+                />
                 <div class="signature">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 87 69"><path d="M 85 41.727 C 75.989 41.727 73.486 34.904 70.983 27.819 C 69.482 31.297 66.478 41.727 60.972 41.727 C 55.525 41.727 53.913 31.95 51.961 27.821 C 46.592 34.702 40.948 42.6 32.939 41.727 C 22.358 40.573 24.929 2 37.945 2 C 50.96 2 22.816 56.984 14.887 65.872 C 6.844 74.891 -5.763 27 8.407 21.863" stroke="#000" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="transparent" pathLength="1" stroke-dashoffset="0" stroke-dasharray="0.4151701608565054 1" will-change="auto"></path></svg>
                 </div>
@@ -36,13 +26,38 @@
     </header>
 </template>
 
+<script>
+import BurgerMenu from './BurgerMenu.vue';
+
+export default {
+    components: {
+        BurgerMenu
+    },
+    data() {
+        return {
+            isOpen: false,
+            menuItems: ['Home', 'About', 'Projects', 'Experience', 'Education', 'Contact']
+        }
+    },
+    methods: {
+        toggleMenu() {
+            this.isOpen = !this.isOpen
+        },
+        closeMenu() {
+            this.isOpen = false
+        }
+    }
+}
+</script>
+
 <style scoped>
 .header {
-    /* background-color: #333; */
+    background-color: var(--color-bg);
     color: #fff;
     padding: 30px 0 0 0;
-    position: relative;
-    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .header__content {
@@ -50,6 +65,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    position: relative;
 }
 
 .header__logo {
@@ -97,25 +113,40 @@ button {
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 99;
-    background: black;
-    opacity: 60%;
+    z-index: 11;
+    background: var(--color-bg);
+    color: var(--color-text);
     padding-top: 4rem;
+    visibility: hidden;
+}
+
+.burger_menu.is-open {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 11;
+    background: rgba(18, 18, 18, 0.35);
 }
 
 .nav-toggle {
+    position: relative;
+    z-index: 11;
     background-color: transparent;
     padding: 5px;
 }
 
 .hamburger {
     display: flex;
-    z-index: 100;
+    z-index: 11;
     flex-direction: column;
     position: relative;
     width: 40px;
@@ -142,12 +173,6 @@ button {
 
 .hamburger::after {
     top: 10px;
-}
-
-@media (max-width: 885px){
-    .nav-toggle {
-        display: block !important;
-    }
 }
 
 .signature {

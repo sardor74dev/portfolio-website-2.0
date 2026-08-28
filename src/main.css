@@ -22,12 +22,10 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-
   font-family: 'DM Sans', sans-serif;
-
   background: var(--color-bg);
   color: var(--color-text);
-
+  overflow-x: hidden;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -244,6 +242,15 @@ p {
   );
 
   margin-inline: auto;
+}
+
+@media (max-width: 1200px){
+  .container {
+    width: min(
+      calc(100% - (var(--container-padding) * 2)),
+      730px
+    );
+  }
 }
 
 .section {

@@ -1,5 +1,5 @@
 <template>
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="portfolio__content">
                 <SectionTitle title="Projects" />
@@ -142,22 +142,16 @@ export default {
 
 .project-card {
     position: relative;
-
     aspect-ratio: 16 / 10;
-
     overflow: hidden;
-
     cursor: pointer;
-
     background: var(--color-surface);
 }
 
 .project-card__image {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition:
         transform 0.6s ease,
         filter 0.6s ease;
@@ -166,22 +160,17 @@ export default {
 .project-card__overlay {
     position: absolute;
     inset: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     padding: 32px;
-
     background:
         linear-gradient(
             to top,
             rgba(0, 0, 0, 0.8),
             rgba(0, 0, 0, 0.25)
         );
-
     opacity: 0;
-
     transition: opacity 0.4s ease;
 }
 
@@ -191,16 +180,16 @@ export default {
 
 .project-card:hover .project-card__image {
     transform: scale(1.05);
-
     filter: brightness(0.65);
 }
 
 .project-card__content {
+    display: flex;
+    flex-direction: column;
     align-self: flex-start;
-
+    gap: 12px;
     transform: translateY(20px);
     opacity: 0;
-
     transition:
         transform 0.5s ease,
         opacity 0.5s ease;
@@ -213,13 +202,10 @@ export default {
 
 .project-card__arrow {
     align-self: flex-end;
-
     font-size: 2rem;
     color: #fff;
-
     transform: translate(-10px, 10px);
     opacity: 1;
-
     transition:
         transform 0.5s ease,
         opacity 0.5s ease;
@@ -232,50 +218,40 @@ export default {
 
 .project-card__number {
     display: block;
-
-    margin-bottom: 12px;
-
     font-size: var(--text-sm);
-
     color: rgba(255, 255, 255, 0.6);
 }
 
 .project-card__title {
     font-size: var(--text-h3);
-
     color: #fff;
 }
 
 .project-card__description {
     max-width: 400px;
-
-    margin-top: 12px;
-
     color: rgba(255, 255, 255, 0.75);
 }
 
 .project-card__stack {
     display: flex;
     flex-wrap: wrap;
-
     gap: 8px;
-
-    margin-top: 24px;
 }
 
 .project-card__stack span {
     padding: 6px 10px;
-
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-full);
-
     font-size: var(--text-xs);
-
     color: #fff;
-
     background: rgba(255, 255, 255, 0.08);
-
     backdrop-filter: blur(8px);
+}
+
+@media (max-width: 1000px) {
+    .portfolio__content {
+        gap: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -295,6 +271,18 @@ export default {
 
     .project-card__image {
         filter: brightness(0.65);
+    }
+    .project-card__description {
+        font-size: var(--text-sm);
+    }
+    .project-card__arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .project-card__content {
+        gap: 6px;
     }
 }
 </style>

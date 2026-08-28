@@ -1,18 +1,18 @@
 <template>
-    <section class="experience">
+    <section id="experience" class="experience">
         <div class="container">
             <div class="experience__content">
                 <SectionTitle title="Experience" />
                 <div class="experience__list">
                     <div class="experience__list-item">
                         <div class="experience__title">
-                            <h3>Senior UX/UI Designer</h3>
+                            <h3>Frontend Developer</h3>
                             <div>
-                                <p>SuperCo</p>
-                                <p>2019 — Present</p>
+                                <p>WEB-MOLOT</p>
+                                <p>2024 — Present</p>
                             </div>
                         </div>
-                        <p class="experience__description">Led the redesign of the flagship mobile application, resulting in a increase in user retention within six months. Implemented a streamlined user onboarding process, reducing user drop-offs.</p>
+                        <p class="experience__description">Developing and maintaining the frontend of web applications. Building responsive interfaces, implementing new features, working with APIs, and improving existing functionality. Working closely with backend development to deliver complete and functional solutions.</p>
                     </div>
                 </div>
                 <div class="experience__numbers">
@@ -90,7 +90,7 @@ export default {
 
 .experience__numbers {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .experience__numbers-item {
@@ -114,5 +114,43 @@ export default {
     font-size: var(--text-lg);
     color: var(--color-text-secondary);
     line-height: 120%;
+}
+
+@media (max-width: 1200px){
+    .experience__numbers-item span {
+        font-size: 46px;
+        color: var(--color-text-secondary);
+        font-weight: 700;
+    }
+
+    .experience__numbers-item p {
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+        line-height: 120%;
+    }
+}
+
+@media (max-width: 1000px){
+    .experience__content {
+        gap: 40px;
+    }
+    .experience__description {
+        font-size: var(--text-sm);
+    }
+    .experience__title h3 {
+        font-size: var(--text-base);
+    }
+    .experience__title p {
+        font-size: var(--text-sm);
+    }
+    .experience__numbers {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .experience__numbers > :not(:first-child) {
+        border: none;
+        padding: 0;
+    }
 }
 </style>

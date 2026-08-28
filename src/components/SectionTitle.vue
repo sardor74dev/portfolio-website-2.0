@@ -35,9 +35,17 @@ export default {
 .section-title__text {
     flex-shrink: 0;
     font-size: 32px;
+    line-height: 140%;
+    letter-spacing: .04em;
     color: var(--color-text-secondary);
     font-family: 'Big Shoulders', sans-serif;
     text-transform: uppercase;
+}
+
+@media (max-width: 1000px){
+    .section-title__text {
+        font-size: 30px;
+    }
 }
 
 .section-title__line {

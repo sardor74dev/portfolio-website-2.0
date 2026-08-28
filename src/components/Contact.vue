@@ -1,10 +1,5 @@
-<script setup lang="ts">
-import SectionTitle from './SectionTitle.vue';
-
-</script>
-
 <template>
-    <section class="contact">
+    <section id="contact" class="contact">
         <div class="container">
             <div class="contact__content">
                 <SectionTitle title="Contact" />
@@ -19,6 +14,16 @@ import SectionTitle from './SectionTitle.vue';
         </div>
     </section>
 </template>
+
+<script>
+import SectionTitle from './SectionTitle.vue';
+
+export default {
+    components: {
+        SectionTitle
+    }
+}
+</script>
 
 <style scoped>
 .container {
@@ -41,11 +46,6 @@ import SectionTitle from './SectionTitle.vue';
 .contact__content-details span {
     font-size: var(--text-lg);
     color: var(--color-text);
-}
-
-.contact__content-details span {
-    font-size: var(--text-lg);
-    color: var(--color-text);
     line-height: 170%;
 }
 
@@ -53,5 +53,20 @@ import SectionTitle from './SectionTitle.vue';
     font-size: var(--text-lg);
     color: var(--color-text-secondary);
     line-height: 170%;
+}
+
+@media(max-width: 1000px){
+    .contact__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .contact__content-description {
+        font-size: var(--text-lg);
+    }
+    .contact__content-details span,
+    .contact__content-details p {
+        font-size: var(--text-sm);
+    }
 }
 </style>

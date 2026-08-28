@@ -1,8 +1,8 @@
 <template>
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <div class="hero__content">
-                <span>crafting digital goods since - y:2017</span>
+                <span>building web experiences since - y:2024</span>
                 <div class="hero__content-title">
                     <h1>Sardor</h1>
                     <h1>Ibragimov</h1>
@@ -22,7 +22,7 @@
                         fill="#1f67f1"
                     />
                 </svg>
-                <p>I’m Lucas Miller — a senior product designer passionately creating digital experiences and solutions for over 10 years</p>
+                <p>I'm Sardor Ibragimov — a Frontend Developer focused on building modern, responsive, and user-friendly web experiences.</p>
             </div>
         </div>
     </section>
@@ -81,6 +81,12 @@ h1 {
 @media (max-width: 425px) {
     h1 {
         font-size: 100px;
+    }
+}
+
+@media (max-width: 375px) {
+    h1 {
+        font-size: 90px;
     }
 }
 </style>

@@ -32,9 +32,9 @@ export default {
 </template>
 
 <style scoped>
-.wrapper {
+/* .wrapper {
   position: relative;
   z-index: 2;
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%), #fff;
-}
+} */
 </style>

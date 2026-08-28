@@ -34,6 +34,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 150px;
-  padding: 80px 0;
+  padding: 180px 0;
+}
+
+@media (max-width: 1000px){
+  .main {
+    gap: 100px;
+  }
 }
 </style>

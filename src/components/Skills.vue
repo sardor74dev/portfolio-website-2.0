@@ -1,5 +1,5 @@
 <template>
-    <section class="skills">
+    <section id="skills" class="skills">
         <Marquee
             :data="skills"
             :speed="60"

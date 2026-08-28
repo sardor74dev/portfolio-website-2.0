@@ -1,11 +1,12 @@
 <template>
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about__content">
                 <SectionTitle title="About" />
                 <div class="about__content-description">
-                    <p>As a passionate software engineer, I thrive on the intricate dance between logic and creativity. Currently immersed in the dynamic world of WebHR, my expertise centers around React Native, where I seamlessly blend technology with innovation.</p>
-                    <p>With a fervor for crafting elegant solutions, I navigate the ever-evolving landscape of software development. My journey involves translating concepts into code, creating seamless user experiences, and constantly pushing the boundaries of what's possible</p>
+                    <p>I'm a Frontend Developer focused on building modern, responsive, and user-friendly web applications. I enjoy transforming ideas and designs into functional interfaces while paying attention to both visual details and usability.</p>
+                    <p>My work involves developing and maintaining web applications, building responsive interfaces, integrating APIs, and working with modern frontend technologies such as Vue, Nuxt, and TypeScript.</p>
+                    <p>I enjoy learning new technologies, improving my development approach, and exploring better ways to build clean, maintainable, and scalable applications.</p>
                 </div>
             </div>
         </div>
@@ -46,5 +47,16 @@ export default {
 .about__content-description p {
     font-size: var(--text-lg);
     color: var(--color-text);
+}
+
+@media(max-width: 1000px){
+    .about__content-description p {
+        font-size: var(--text-sm);
+    }
+    .about__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
 }
 </style>

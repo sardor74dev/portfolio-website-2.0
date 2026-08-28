@@ -1,18 +1,18 @@
 <template>
-    <section class="education">
+    <section id="education" class="education">
         <div class="container">
             <div class="education__content">
                 <SectionTitle title="education" />
                 <div class="education__list">
                     <div class="education__list-item">
                         <div class="education__title">
-                            <h3>Bachelor of Science in Computer Science</h3>
+                            <h3>Bachelor's Degree in Software Engineering</h3>
                             <div>
-                                <p>University of California, Berkeley</p>
-                                <p>2008 — 2012</p>
+                                <p>Fergana State Technical University</p>
+                                <p>2022 — 2026</p>
                             </div>
                         </div>
-                        <p class="education__description">Gained a solid foundation in software development overall. Focused on building mobile applications.</p>
+                        <p class="education__description">Built a foundation in software development and computer science while gaining practical experience through academic and personal projects. Developed skills in web development and modern programming technologies.</p>
                     </div>
                 </div>
             </div>
@@ -72,5 +72,20 @@ export default {
 .education__description {
     font-size: var(--text-lg);
     color: var(--color-text);
+}
+
+@media(max-width: 1000px){
+    .education__content {
+        gap: 40px;
+    }
+    .education__description {
+        font-size: var(--text-sm);
+    }
+    .education__title h3 {
+        font-size: var(--text-base);
+    }
+    .education__title p {
+        font-size: var(--text-sm);
+    }
 }
 </style>
