@@ -4,29 +4,29 @@
             <div class="experience__content">
                 <SectionTitle :title="$t('sections.experience')" />
                 <div class="experience__list">
-                    <div class="experience__list-item">
+                    <div
+                        v-for="job in jobs"
+                        :key="job.id"
+                        class="experience__list-item"
+                    >
                         <div class="experience__title">
-                            <h3>Frontend Developer</h3>
+                            <h3>{{ job.translations?.[$i18n.locale].position }}</h3>
                             <div>
-                                <p>WEB-MOLOT</p>
-                                <p>2024 — Present</p>
+                                <p>{{ job.company }}</p>
+                                <p>{{ job.period?.[$i18n.locale] }}</p>
                             </div>
                         </div>
-                        <p class="experience__description">Developing and maintaining the frontend of web applications. Building responsive interfaces, implementing new features, working with APIs, and improving existing functionality. Working closely with backend development to deliver complete and functional solutions.</p>
+                        <p class="experience__description">{{ job.translations?.[$i18n.locale].description }}</p>
                     </div>
                 </div>
                 <div class="experience__numbers">
-                    <div class="experience__numbers-item">
-                        <span>02+</span>
-                        <p>Years of <br>Experience</p>
-                    </div>
-                    <div class="experience__numbers-item">
-                        <span>03+</span>
-                        <p>Commercial <br>Projects</p>
-                    </div>
-                    <div class="experience__numbers-item">
-                        <span>10+</span>
-                        <p>Technologies</p>
+                    <div
+                        v-for="(number, index) in numbers"
+                        :key="index"
+                        class="experience__numbers-item"
+                    >
+                        <span>{{ number.number }}</span>
+                        <p>{{ number.translations?.[$i18n.locale] }}</p>
                     </div>
                 </div>
             </div>
@@ -35,11 +35,29 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SectionTitle from './SectionTitle.vue';
 
 export default {
     components: {
         SectionTitle
+    },
+    data(){
+        return {
+            jobs: null,
+            numbers: null
+        }
+    },
+    mounted(){
+        this.getExperienceData()
+    },
+    methods: {
+        async getExperienceData(){
+            const response = await axios.get('https://071f4809201d9e24.mokky.dev/experience')
+            this.jobs = response.data[0]
+            this.numbers = response.data[1]
+            console.log(this.jobs, this.numbers)
+        }
     }
 }
 </script>

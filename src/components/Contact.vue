@@ -3,12 +3,12 @@
         <div class="container">
             <div class="contact__content">
                 <SectionTitle :title="$t('sections.contact')" />
-                <p class="contact__content-description">Have a project or opportunity in mind? Feel free to reach out.</p>
+                <p class="contact__content-description">{{ contact_data.translations?.[$i18n.locale].text }}</p>
                 <div class="contact__content-details">
-                    <span>Fergana, Uzbekistan</span>
-                    <p><a href="mailto:sardoribragimov.7410@gmail.com">sardoribragimov.7410@gmail.com</a></p>
-                    <p><a href="https://t.me/Ibragimov_410">@Ibragimov_410</a></p>
-                    <p><a href="tel:+998910401485">+998 (91) 040-14-85</a></p>
+                    <span>{{ contact_data.translations?.[$i18n.locale].location }}</span>
+                    <p><a :href="`mailto:${contact_data.links?.email}`">{{ contact_data.links?.email }}</a></p>
+                    <p><a :href="`https://t.me/${contact_data.links?.telegram}`">@{{ contact_data.links?.telegram }}</a></p>
+                    <p><a :href="`tel:${contact_data.links?.mob}`">{{ contact_data.links?.mob }}</a></p>
                 </div>
             </div>
         </div>
@@ -16,11 +16,27 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SectionTitle from './SectionTitle.vue';
 
 export default {
     components: {
         SectionTitle
+    },
+    data(){
+        return {
+            contact_data: {},
+        }
+    },
+    mounted(){
+        this.getContactData()
+    },
+    methods: {
+        async getContactData(){
+            const response = await axios.get('https://071f4809201d9e24.mokky.dev/contact')
+            this.contact_data = response.data[0]
+            console.log(response.data[0])
+        }
     }
 }
 </script>

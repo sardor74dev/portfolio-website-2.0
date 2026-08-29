@@ -6,32 +6,32 @@
                 <div class="projects__grid">
                     <article
                         v-for="project in projects"
-                        :key="project.title"
+                        :key="project.id"
                         class="project-card"
                     >
                         <img
                             class="project-card__image"
-                            :src="project.image"
-                            :alt="project.title"
+                            :src="project.images[0]"
+                            :alt="project.translations?.[$i18n.locale].title"
                         />
 
                         <div class="project-card__overlay">
                             <div class="project-card__content">
                                 <span class="project-card__number">
-                                    {{ project.number }}
+                                    0{{ project.id }}
                                 </span>
 
                                 <h3 class="project-card__title">
-                                    {{ project.title }}
+                                    {{ project.translations?.[$i18n.locale].title }}
                                 </h3>
 
                                 <p class="project-card__description">
-                                    {{ project.description }}
+                                    {{ project.translations?.[$i18n.locale].description }}
                                 </p>
 
                                 <div class="project-card__stack">
                                     <span
-                                        v-for="tech in project.stack"
+                                        v-for="tech in project.technologies"
                                         :key="tech"
                                     >
                                         {{ tech }}
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SectionTitle from './SectionTitle.vue';
 
 export default {
@@ -60,62 +61,73 @@ export default {
     },
     data() {
         return {
-            projects: [
-                {
-                    number: '01',
-                    title: 'SovTest',
-                    description:
-                        'Corporate website with a modern and responsive interface.',
-                    image: '/sovtest.jpg',
-                    stack: [
-                        'Vue',
-                        'Laravel',
-                        'Inertia',
-                        'Tailwind',
-                    ],
-                },
-                {
-                    number: '02',
-                    title: 'SovTest',
-                    description:
-                        'Corporate website with a modern and responsive interface.',
-                    image: '/sovtest.jpg',
-                    stack: [
-                        'Vue',
-                        'Laravel',
-                        'Inertia',
-                        'Tailwind',
-                    ],
-                },
-                {
-                    number: '03',
-                    title: 'SovTest',
-                    description:
-                        'Corporate website with a modern and responsive interface.',
-                    image: '/sovtest.jpg',
-                    stack: [
-                        'Vue',
-                        'Laravel',
-                        'Inertia',
-                        'Tailwind',
-                    ],
-                },
-                {
-                    number: '04',
-                    title: 'SovTest',
-                    description:
-                        'Corporate website with a modern and responsive interface.',
-                    image: '/sovtest.jpg',
-                    stack: [
-                        'Vue',
-                        'Laravel',
-                        'Inertia',
-                        'Tailwind',
-                    ],
-                },
-            ],
+            // projects: [
+            //     {
+            //         number: '01',
+            //         title: 'SovTest',
+            //         description:
+            //             'Corporate website with a modern and responsive interface.',
+            //         image: '/sovtest.jpg',
+            //         stack: [
+            //             'Vue',
+            //             'Laravel',
+            //             'Inertia',
+            //             'Tailwind',
+            //         ],
+            //     },
+            //     {
+            //         number: '02',
+            //         title: 'SovTest',
+            //         description:
+            //             'Corporate website with a modern and responsive interface.',
+            //         image: '/sovtest.jpg',
+            //         stack: [
+            //             'Vue',
+            //             'Laravel',
+            //             'Inertia',
+            //             'Tailwind',
+            //         ],
+            //     },
+            //     {
+            //         number: '03',
+            //         title: 'SovTest',
+            //         description:
+            //             'Corporate website with a modern and responsive interface.',
+            //         image: '/sovtest.jpg',
+            //         stack: [
+            //             'Vue',
+            //             'Laravel',
+            //             'Inertia',
+            //             'Tailwind',
+            //         ],
+            //     },
+            //     {
+            //         number: '04',
+            //         title: 'SovTest',
+            //         description:
+            //             'Corporate website with a modern and responsive interface.',
+            //         image: '/sovtest.jpg',
+            //         stack: [
+            //             'Vue',
+            //             'Laravel',
+            //             'Inertia',
+            //             'Tailwind',
+            //         ],
+            //     },
+            // ],
+            projects: []
         };
     },
+    mounted(){
+        this.getProjects()
+    },
+    methods: {
+        async getProjects(){
+            const response = await axios.get('https://071f4809201d9e24.mokky.dev/projects')
+            this.projects = response.data
+            console.log(this.projects)
+        }
+    }
 };
 </script>
 

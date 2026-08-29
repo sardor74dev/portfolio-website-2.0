@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Marquee from './Marquee.vue';
 
 export default {
@@ -50,15 +51,25 @@ export default {
     },
     data(){
         return {
-            skills: [
-                'HTML',
-                'CSS',
-                'JavaScript',
-                'Vue',
-                'Pinia',
-                'Git',
-                'Tailwind CSS',
-            ],
+            skills: null
+            // skills: [
+            //     'HTML',
+            //     'CSS',
+            //     'JavaScript',
+            //     'Vue',
+            //     'Pinia',
+            //     'Git',
+            //     'Tailwind CSS',
+            // ],
+        }
+    },
+    mounted(){
+        this.getSkills()
+    },
+    methods: {
+        async getSkills(){
+            const response = await axios.get('https://071f4809201d9e24.mokky.dev/skills')
+            this.skills = response.data
         }
     }
 //     data() {

@@ -2,7 +2,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero__content">
-                <span>building web experiences since - y:2024</span>
+                <span>{{ heroData?.title }}</span>
                 <div class="hero__content-title">
                     <h1>Sardor</h1>
                     <h1>Ibragimov</h1>
@@ -22,14 +22,42 @@
                         fill="#1f67f1"
                     />
                 </svg>
-                <p>I'm Sardor Ibragimov — a Frontend Developer focused on building modern, responsive, and user-friendly web experiences.</p>
+                <p>{{ heroData?.description }}</p>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import axios from 'axios';
 
+export default {
+    data(){
+        return {
+            hero_data: null
+        }
+    },
+    mounted(){
+        this.getHeroData()
+    },
+    methods: {
+        async getHeroData(){
+            try {
+                const { data } = await axios.get('https://071f4809201d9e24.mokky.dev/hero')
+                const item = data[0]
+                this.hero_data = item
+                console.log(this.hero_data, this.$i18n.locale)
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+    },
+    computed: {
+        heroData() {
+            return this.hero_data?.translations?.[this.$i18n.locale];
+        },
+    }
+}
 </script>
 
 <style scoped>

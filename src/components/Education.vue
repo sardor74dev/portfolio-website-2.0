@@ -4,15 +4,19 @@
             <div class="education__content">
                 <SectionTitle :title="$t('sections.education')" />
                 <div class="education__list">
-                    <div class="education__list-item">
+                    <div
+                        v-for="education in education_data"
+                        :key="education.id"
+                        class="education__list-item"
+                    >
                         <div class="education__title">
-                            <h3>Bachelor's Degree in Software Engineering</h3>
+                            <h3>{{ education.translations?.[$i18n.locale].degree }}</h3>
                             <div>
-                                <p>Fergana State Technical University</p>
-                                <p>2022 — 2026</p>
+                                <p>{{ education.translations?.[$i18n.locale].place }}</p>
+                                <p>{{ education.period?.[$i18n.locale] }}</p>
                             </div>
                         </div>
-                        <p class="education__description">Built a foundation in software development and computer science while gaining practical experience through academic and personal projects. Developed skills in web development and modern programming technologies.</p>
+                        <p class="education__description">{{ education.translations?.[$i18n.locale].description }}</p>
                     </div>
                 </div>
             </div>
@@ -21,11 +25,27 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SectionTitle from './SectionTitle.vue';
 
 export default {
     components: {
         SectionTitle
+    },
+    data(){
+        return {
+            education_data: null
+        }
+    },
+    mounted(){
+        this.getEducationData()
+    },
+    methods: {
+        async getEducationData(){
+            const response = await axios.get('https://071f4809201d9e24.mokky.dev/education')
+            this.education_data = response.data
+            console.log(this.education_data)
+        }
     }
 }
 </script>
