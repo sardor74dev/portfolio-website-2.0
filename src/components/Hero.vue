@@ -12,7 +12,7 @@
                     height="48"
                     viewBox="0 0 48 48"
                     xmlns="http://www.w3.org/2000/svg"
-                    >
+                >
                     <path
                         d="M24 0
                         C21.8 13.8 13.8 21.8 0 24

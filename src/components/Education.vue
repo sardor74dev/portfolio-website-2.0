@@ -2,7 +2,7 @@
     <section id="education" class="education">
         <div class="container">
             <div class="education__content">
-                <SectionTitle title="education" />
+                <SectionTitle :title="$t('sections.education')" />
                 <div class="education__list">
                     <div class="education__list-item">
                         <div class="education__title">

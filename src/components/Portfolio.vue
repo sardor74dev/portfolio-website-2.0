@@ -2,7 +2,7 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="portfolio__content">
-                <SectionTitle title="Projects" />
+                <SectionTitle :title="$t('sections.projects')" />
                 <div class="projects__grid">
                     <article
                         v-for="project in projects"

@@ -2,7 +2,7 @@
     <section id="experience" class="experience">
         <div class="container">
             <div class="experience__content">
-                <SectionTitle title="Experience" />
+                <SectionTitle :title="$t('sections.experience')" />
                 <div class="experience__list">
                     <div class="experience__list-item">
                         <div class="experience__title">

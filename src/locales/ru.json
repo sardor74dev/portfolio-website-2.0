@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Главная",
+    "about": "Обо мне",
+    "education": "Образование",
+    "experience": "Опыт",
+    "projects": "Проекты",
+    "contact": "Контакты"
+  },
+
+  "sections": {
+    "about": "Обо мне",
+    "education": "Образование",
+    "experience": "Опыт",
+    "projects": "Проекты",
+    "contact": "Контакты"
+  },
+
+  "footer": {
+    "copyright": "2026 Сардор Ибрагимов"
+  }
+}

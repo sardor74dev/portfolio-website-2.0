@@ -2,7 +2,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact__content">
-                <SectionTitle title="Contact" />
+                <SectionTitle :title="$t('sections.contact')" />
                 <p class="contact__content-description">Have a project or opportunity in mind? Feel free to reach out.</p>
                 <div class="contact__content-details">
                     <span>Fergana, Uzbekistan</span>

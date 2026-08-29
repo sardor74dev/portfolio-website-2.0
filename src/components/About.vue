@@ -2,7 +2,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about__content">
-                <SectionTitle title="About" />
+                <SectionTitle :title="$t('sections.about')" />
                 <div class="about__content-description">
                     <p>I'm a Frontend Developer focused on building modern, responsive, and user-friendly web applications. I enjoy transforming ideas and designs into functional interfaces while paying attention to both visual details and usability.</p>
                     <p>My work involves developing and maintaining web applications, building responsive interfaces, integrating APIs, and working with modern frontend technologies such as Vue, Nuxt, and TypeScript.</p>

@@ -69,7 +69,7 @@ export default {
     z-index: 13;
     display: flex;
     flex-direction: column;
-    width: 195px;
+    min-width: 195px;
     padding: 1rem;
     justify-content: space-between;
     border-radius: 8px;
@@ -96,7 +96,7 @@ export default {
     display: block;
     border-radius: 0.375rem;
     color: var(--color-text);
-    font-family: 'Big Shoulders', sans-serif;
+    font-family: var(--font-display);
     font-size: 34px;
     font-weight: 600;
     line-height: 1.5rem;
@@ -107,7 +107,7 @@ export default {
 }
 
 .burger-menu__link.is-active {
-    color: var(--color-accent);
+    color: var(--color-text-secondary);
 }
 
 .burger-menu__close {

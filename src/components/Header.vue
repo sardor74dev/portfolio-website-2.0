@@ -15,12 +15,19 @@
                 <BurgerMenu 
                     :isMenuOpened="isOpen" 
                     :toggleMenu="toggleMenu"
-                    :menuItems="menuItems"
+                    :menuItems="[
+                        $t('nav.home'),
+                        $t('nav.about'),
+                        $t('nav.projects'),
+                        $t('nav.experience'),
+                        $t('nav.education'),
+                        $t('nav.contact')
+                    ]"
                 />
                 <div class="signature">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 87 69"><path d="M 85 41.727 C 75.989 41.727 73.486 34.904 70.983 27.819 C 69.482 31.297 66.478 41.727 60.972 41.727 C 55.525 41.727 53.913 31.95 51.961 27.821 C 46.592 34.702 40.948 42.6 32.939 41.727 C 22.358 40.573 24.929 2 37.945 2 C 50.96 2 22.816 56.984 14.887 65.872 C 6.844 74.891 -5.763 27 8.407 21.863" stroke="#000" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="transparent" pathLength="1" stroke-dashoffset="0" stroke-dasharray="0.4151701608565054 1" will-change="auto"></path></svg>
                 </div>
-                <button>Remix</button>
+                <LanguageSwitcher />
             </div>
         </div>
     </header>
@@ -28,15 +35,17 @@
 
 <script>
 import BurgerMenu from './BurgerMenu.vue';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 
 export default {
     components: {
-        BurgerMenu
+        BurgerMenu,
+        LanguageSwitcher
     },
     data() {
         return {
             isOpen: false,
-            menuItems: ['Home', 'About', 'Projects', 'Experience', 'Education', 'Contact']
+            // menuItems: ['Home', 'About', 'Projects', 'Experience', 'Education', 'Contact']
         }
     },
     methods: {

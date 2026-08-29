@@ -38,7 +38,7 @@ export default {
     line-height: 140%;
     letter-spacing: .04em;
     color: var(--color-text-secondary);
-    font-family: 'Big Shoulders', sans-serif;
+    font-family: var(--font-display);
     text-transform: uppercase;
 }
 
