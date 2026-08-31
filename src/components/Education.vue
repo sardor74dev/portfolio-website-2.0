@@ -86,7 +86,7 @@ export default {
 
 .education__title p {
     font-size: var(--text-base);
-    color: #12121280;
+    color: var(--color-text-secondary);
 }
 
 .education__description {

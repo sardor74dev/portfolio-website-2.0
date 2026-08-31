@@ -37,7 +37,7 @@ export default {
     font-size: 32px;
     line-height: 140%;
     letter-spacing: .04em;
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     font-family: var(--font-display);
     text-transform: uppercase;
 }

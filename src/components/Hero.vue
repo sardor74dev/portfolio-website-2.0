@@ -7,21 +7,23 @@
                     <h1>Sardor</h1>
                     <h1>Ibragimov</h1>
                 </div>
-                <svg
-                    width="48"
-                    height="48"
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M24 0
-                        C21.8 13.8 13.8 21.8 0 24
-                        C13.8 26.2 21.8 34.2 24 48
-                        C26.2 34.2 34.2 26.2 48 24
-                        C34.2 21.8 26.2 13.8 24 0Z"
-                        fill="#1f67f1"
-                    />
-                </svg>
+                <div class="hero__content-star">
+                    <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M24 0
+                            C21.8 13.8 13.8 21.8 0 24
+                            C13.8 26.2 21.8 34.2 24 48
+                            C26.2 34.2 34.2 26.2 48 24
+                            C34.2 21.8 26.2 13.8 24 0Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </div>
                 <p>{{ heroData?.description }}</p>
             </div>
         </div>
@@ -71,7 +73,7 @@ export default {
 }
 
 span {
-    color: #12121280;
+    color: var(--color-text-secondary);
     font-size: var(--text-sm);
     text-transform: uppercase;
 }
@@ -90,8 +92,12 @@ p {
 h1 {
     font-family: "Big Shoulders", sans-serif;
     font-size: var(--text-hero);
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     text-transform: uppercase;
+}
+
+.hero__content-star {
+    color: var(--color-accent);
 }
 
 @media (max-width: 1000px) {

@@ -19,7 +19,7 @@
                         </a>
                     </li>
                 </ul>
-                <p>2026 Sardor Ibragimov</p>
+                <p class="footer__content-copyright">2026 Sardor Ibragimov</p>
             </div>
         </div>
     </div>
@@ -42,5 +42,9 @@
 .footer__content ul li img {
     width: 32px;
     height: 32px;
+}
+
+.footer__content-copyright {
+    color: var(--color-text-secondary);
 }
 </style>

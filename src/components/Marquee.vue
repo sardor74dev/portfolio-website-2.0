@@ -96,7 +96,7 @@ export default {
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.05em;
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     text-transform: uppercase;
 }
 
@@ -109,7 +109,7 @@ export default {
 
     font-size: 0.4em;
 
-    color: var(--color-surface-secondary);
+    color: var(--color-surface);
 }
 
 @keyframes marquee {

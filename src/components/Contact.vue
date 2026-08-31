@@ -67,7 +67,7 @@ export default {
 
 .contact__content-details p {
     font-size: var(--text-lg);
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     line-height: 170%;
 }
 

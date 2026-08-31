@@ -98,7 +98,7 @@ export default {
 
 .experience__title p {
     font-size: var(--text-base);
-    color: #12121280;
+    color: var(--color-text-secondary);
 }
 
 .experience__description {
@@ -124,26 +124,26 @@ export default {
 
 .experience__numbers-item span {
     font-size: 60px;
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     font-weight: 700;
 }
 
 .experience__numbers-item p {
     font-size: var(--text-lg);
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     line-height: 120%;
 }
 
 @media (max-width: 1200px){
     .experience__numbers-item span {
         font-size: 46px;
-        color: var(--color-text-secondary);
+        color: var(--color-accent);
         font-weight: 700;
     }
 
     .experience__numbers-item p {
         font-size: var(--text-sm);
-        color: var(--color-text-secondary);
+        color: var(--color-accent);
         line-height: 120%;
     }
 }

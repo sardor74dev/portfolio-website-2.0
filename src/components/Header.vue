@@ -27,7 +27,10 @@
                 <div class="signature">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 87 69"><path d="M 85 41.727 C 75.989 41.727 73.486 34.904 70.983 27.819 C 69.482 31.297 66.478 41.727 60.972 41.727 C 55.525 41.727 53.913 31.95 51.961 27.821 C 46.592 34.702 40.948 42.6 32.939 41.727 C 22.358 40.573 24.929 2 37.945 2 C 50.96 2 22.816 56.984 14.887 65.872 C 6.844 74.891 -5.763 27 8.407 21.863" stroke="#000" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="transparent" pathLength="1" stroke-dashoffset="0" stroke-dasharray="0.4151701608565054 1" will-change="auto"></path></svg>
                 </div>
-                <LanguageSwitcher />
+                <div class="switchers">
+                    <ThemeSwitcher />
+                    <LanguageSwitcher />
+                </div>
             </div>
         </div>
     </header>
@@ -36,11 +39,13 @@
 <script>
 import BurgerMenu from './BurgerMenu.vue';
 import LanguageSwitcher from './LanguageSwitcher.vue';
+import ThemeSwitcher from './ThemeSwitcher.vue';
 
 export default {
     components: {
         BurgerMenu,
-        LanguageSwitcher
+        LanguageSwitcher,
+        ThemeSwitcher
     },
     data() {
         return {
@@ -160,7 +165,7 @@ button {
     position: relative;
     width: 40px;
     height: 2px;
-    background-color: #121212;
+    background-color: var(--color-text);
     cursor: pointer;
 }
 
@@ -173,7 +178,7 @@ button {
     position: absolute;
     right: 0;
     left: 0;
-    background-color: #121212;
+    background-color: var(--color-text);
 }
 
 .hamburger::before {
@@ -196,6 +201,11 @@ button {
     padding: 8px 24px;
     border-radius: 50px;
     font-size: var(--text-base);
+}
+
+.switchers {
+    display: flex;
+    gap: 10px;
 }
 
 @media (max-width: 1000px) {

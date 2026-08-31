@@ -107,7 +107,7 @@ export default {
 }
 
 .burger-menu__link.is-active {
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
 }
 
 .burger-menu__close {
