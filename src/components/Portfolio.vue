@@ -25,7 +25,7 @@
                                     {{ project.translations?.[$i18n.locale].title }}
                                 </h3>
 
-                                <p class="project-card__description">
+                                <p :title="project.translations?.[$i18n.locale].description" class="project-card__description">
                                     {{ project.translations?.[$i18n.locale].description }}
                                 </p>
 
@@ -243,6 +243,11 @@ export default {
 .project-card__description {
     max-width: 400px;
     color: rgba(255, 255, 255, 0.75);
+    display: -webkit-box;           /* Required */
+    -webkit-box-orient: vertical;   /* Required */
+    -webkit-line-clamp: 2;          /* Required for current browser engine engines */
+    line-clamp: 2;                  /* Future proofing */
+    overflow: hidden;               /* Required to hide the extra text */
 }
 
 .project-card__stack {
@@ -293,9 +298,18 @@ export default {
     }
 }
 
+@media (max-width: 640px) {
+    .project-card__overlay {
+        padding: 24px;
+    }
+}
+
 @media (max-width: 425px) {
     .project-card__content {
         gap: 6px;
+    }
+    .project-card__overlay {
+        padding: 16px;
     }
 }
 </style>
