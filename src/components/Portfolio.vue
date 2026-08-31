@@ -164,6 +164,7 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition:
         transform 0.6s ease,
         filter 0.6s ease;
