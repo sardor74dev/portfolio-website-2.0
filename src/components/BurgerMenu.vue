@@ -1,6 +1,11 @@
 <script>
+import ThemeSwitcher from './ThemeSwitcher.vue';
+
 export default {
     name: "BurgerMenu",
+    components: {
+        ThemeSwitcher
+    },
     props: {
         isMenuOpened: {
             type: Boolean,
@@ -41,11 +46,16 @@ export default {
         class="burger-menu"
         aria-label="Main navigation"
     >
-        <button type="button" @click="toggleMenu" class="burger-menu__close" aria-label="Close navigation menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-        </button>
+        <div class="burger-menu__btns">
+            <button type="button" @click="toggleMenu" class="burger-menu__close" aria-label="Close navigation menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="theme-switcher">
+                <ThemeSwitcher />
+            </div>
+        </div>
         <ul class="burger-menu__list">
             <li v-for="item in menuItems" :key="item" class="burger-menu__item">
                 <a
@@ -119,5 +129,21 @@ export default {
 .burger-menu__close svg {
     width: 50px;
     height: 50px;
+}
+
+.burger-menu__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-switcher {
+    display: none;
+}
+
+@media(max-width: 425px) {
+    .theme-switcher {
+        display: flex;
+    }
 }
 </style>
