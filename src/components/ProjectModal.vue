@@ -121,7 +121,7 @@ export default {
       return this.currentTranslation.title || 'Project';
     },
     projectDescription() {
-      return this.currentTranslation.description || 'Project description is not available yet.';
+      return this.currentTranslation.description_detailed || 'Project description is not available yet.';
     },
     projectImages() {
       return this.project?.images || [];
@@ -274,7 +274,6 @@ export default {
 }
 
 .project-modal__description {
-  max-width: 60ch;
   color: var(--color-text-secondary);
 }
 
@@ -346,7 +345,14 @@ export default {
 
 @media (max-width: 768px) {
   .project-modal__backdrop {
-    padding: 12px;
+    padding: 0;
+  }
+
+  .project-modal {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
   }
 
   .project-modal__media {
