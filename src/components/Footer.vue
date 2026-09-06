@@ -5,17 +5,26 @@
                 <ul>
                     <li>
                         <a href="https://t.me/Ibragimov_410">
-                            <img src="https://cdn.simpleicons.org/telegram/black">
+                            <span
+                                class="social-icon social-icon--telegram"
+                                aria-hidden="true"
+                            ></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/sardor74dev">
-                            <img src="https://cdn.simpleicons.org/github/black">
+                            <span
+                                class="social-icon social-icon--github"
+                                aria-hidden="true"
+                            ></span>
                         </a>
                     </li>
                     <li>
                         <a href="mailto:sardoribragimov.7410@gmail.com">
-                            <img src="https://cdn.simpleicons.org/gmail/black">
+                            <span
+                                class="social-icon social-icon--gmail"
+                                aria-hidden="true"
+                            ></span>
                         </a>
                     </li>
                 </ul>
@@ -24,6 +33,12 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: "Footer"
+}
+</script>
 
 <style scoped>
 .footer__content {
@@ -46,5 +61,32 @@
 
 .footer__content-copyright {
     color: var(--color-text-secondary);
+}
+
+.social-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-text);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    transition: background-color var(--transition-base);
+}
+
+.social-icon:hover {
+    background-color: var(--color-accent);
+}
+
+.social-icon--gmail {
+    mask-image: url("https://cdn.simpleicons.org/gmail");
+}
+
+.social-icon--telegram {
+    mask-image: url("https://cdn.simpleicons.org/telegram");
+}
+
+.social-icon--github {
+    mask-image: url("https://cdn.simpleicons.org/github");
 }
 </style>
