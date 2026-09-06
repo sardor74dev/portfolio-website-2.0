@@ -17,7 +17,7 @@ export default {
 
     data() {
         return {
-            theme: 'light',
+            theme: localStorage.getItem('theme') || 'light',
         };
     },
 
