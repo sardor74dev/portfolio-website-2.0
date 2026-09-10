@@ -22,7 +22,10 @@
           aria-label="Close project details"
           @click="close"
         >
-          ×
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="1.82812" width="2" height="18" rx="1" transform="rotate(-45 0 1.82812)" fill="currentColor" />
+            <rect x="12.9492" width="2" height="18" rx="1" transform="rotate(45 12.9492 0)" fill="currentColor" />
+          </svg>
         </button>
 
         <div class="project-modal__media">
@@ -39,7 +42,10 @@
             aria-label="Previous project image"
             @click="previousImage"
           >
-            <span aria-hidden="true">&#8592;</span>
+            <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 7.00011H2V9.00011H13V7.00011Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.179688 7.92289L1.71059 9.45382C3.56407 11.3073 5.07925 13.4705 6.18772 15.8458L8.00008 15C6.79304 12.4135 5.14313 10.0579 3.12483 8.0396L3.00811 7.92289L3.12483 7.80617C5.14313 5.78788 6.79304 3.43229 8.00008 0.845771L6.18772 0C5.07925 2.37528 3.56407 4.53849 1.71059 6.39195L0.179688 7.92289Z" fill="currentColor"/>
+            </svg>
           </button>
 
           <button
@@ -49,7 +55,10 @@
             aria-label="Next project image"
             @click="nextImage"
           >
-            <span aria-hidden="true">&#8594;</span>
+            <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 7.00011H11V9.00011H0V7.00011Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8203 7.92289L11.2894 9.45382C9.43592 11.3073 7.92075 13.4705 6.81228 15.8458L4.99992 15C6.20696 12.4135 7.85687 10.0579 9.87517 8.0396L9.99189 7.92289L9.87517 7.80617C7.85687 5.78788 6.20696 3.43229 4.99992 0.845771L6.81228 0C7.92075 2.37528 9.43592 4.53849 11.2894 6.39195L12.8203 7.92289Z" fill="currentColor"/>
+            </svg>
           </button>
 
           <span v-if="hasMultipleImages" class="project-modal__counter">
@@ -222,17 +231,17 @@ export default {
   place-items: center;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.48);
-  color: #fff;
+  background: var(--color-bg);
+  color: var(--color-accent);
   font-size: 1.5rem;
   transform: translateY(-50%);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .project-modal__navigation:hover {
-  background: rgba(0, 0, 0, 0.72);
+  color: var(--color-bg);
+  background: var(--color-accent);
 }
 
 .project-modal__navigation--previous {
@@ -284,11 +293,10 @@ export default {
 }
 
 .project-modal__stack span {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-accent);
   border-radius: 999px;
   padding: 7px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--color-text);
+  color: var(--color-accent);
   font-size: var(--text-sm);
 }
 
@@ -327,10 +335,16 @@ export default {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.38);
-  color: #fff;
+  background: var(--color-bg);
+  color: var(--color-accent);
   font-size: 2rem;
   line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.project-modal__close:hover {
+  color: var(--color-bg);
+  background: var(--color-accent);
 }
 
 .modal-fade-enter-active,

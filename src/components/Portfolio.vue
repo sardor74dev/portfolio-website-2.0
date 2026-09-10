@@ -48,7 +48,10 @@
                             </div>
 
                             <span class="project-card__arrow">
-                                ->
+                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 7.00011H11V9.00011H0V7.00011Z" fill="currentColor"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8203 7.92289L11.2894 9.45382C9.43592 11.3073 7.92075 13.4705 6.81228 15.8458L4.99992 15C6.20696 12.4135 7.85687 10.0579 9.87517 8.0396L9.99189 7.92289L9.87517 7.80617C7.85687 5.78788 6.20696 3.43229 4.99992 0.845771L6.81228 0C7.92075 2.37528 9.43592 4.53849 11.2894 6.39195L12.8203 7.92289Z" fill="currentColor"/>
+                                </svg>
                             </span>
                         </div>
                     </article>
@@ -223,16 +226,15 @@ export default {
 .project-card__stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
 .project-card__stack span {
-    padding: 6px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-full);
+    border: 1px solid white;
+    border-radius: 999px;
+    padding: 7px 12px;
+    color: white;
     font-size: var(--text-xs);
-    color: #fff;
-    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
 }
 
