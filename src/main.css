@@ -94,6 +94,7 @@ ol {
   /* Text */
   --color-text: #121212;
   --color-text-secondary: #12121280;
+  --color-text-reverse: #f0f0f0;
 
   --font-display: 'Big Shoulders', sans-serif;
   --font-body: 'DM Sans', sans-serif;
@@ -128,6 +129,7 @@ ol {
   /* Text */
   --color-text: #f0f0f0;
   --color-text-secondary: #f0f0f080;
+  --color-text-reverse: #121212;
 
   /* Accent */
   --color-accent: #e0f11f;

@@ -25,6 +25,23 @@
                     </svg>
                 </div>
                 <p>{{ heroData?.description }}</p>
+                <a class="hero__content-download-cv" href="/Сардор_Ибрагимов_CV.pdf" download>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title/>
+                        <g id="Complete">
+                            <g id="download">
+                                <g>
+                                    <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                    <g>
+                                        <polyline data-name="Right" fill="none" id="Right-2" points="7.9 12.3 12 16.3 16.1 12.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                        <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="2.7" y2="14.2"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    {{ $t('hero.downloadCV') }}
+                </a>
             </div>
         </div>
     </section>
@@ -100,6 +117,28 @@ h1 {
     color: var(--color-accent);
 }
 
+.hero__content-download-cv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--color-accent);
+    color: var(--color-text-reverse);
+    font-size: var(--text-base);
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    margin: 40px 0 0 0;
+    transition: all 0.3s ease;
+}
+
+.hero__content-download-cv:hover {
+    background: var(--color-surface);
+    cursor: pointer;
+    color: var(--color-text);
+}
+
 @media (max-width: 1000px) {
     h1 {
         font-size: 120px;
@@ -115,6 +154,11 @@ h1 {
 @media (max-width: 425px) {
     h1 {
         font-size: 100px;
+    }
+    .hero__content-download-cv {
+        padding: 12px 24px;
+        font-size: var(--text-sm);
+        width: 100%;
     }
 }
 

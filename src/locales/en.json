@@ -1,4 +1,7 @@
 {
+  "hero": {
+    "downloadCV": "Download CV"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
