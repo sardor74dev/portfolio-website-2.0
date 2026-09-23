@@ -22,13 +22,13 @@ export default {
 </script>
 
 <template>
-  <HeroSection />
-  <AboutSection />
-  <PortfolioSection />
-  <Experience />
-  <SkillsSection />
-  <Education />
-  <ContactSection />
+  <HeroSection v-reveal class="reveal" />
+  <AboutSection v-reveal class="reveal" />
+  <PortfolioSection v-reveal class="reveal" />
+  <Experience v-reveal class="reveal" />
+  <SkillsSection v-reveal class="reveal" />
+  <Education v-reveal class="reveal" />
+  <ContactSection v-reveal class="reveal" />
 </template>
 
 <style scoped>
