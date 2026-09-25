@@ -2,8 +2,8 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about__content">
-                <SectionTitle :title="$t('sections.about')" />
-                <div class="about__content-description">
+                <SectionTitle v-reveal style="--reveal-delay: 0ms" :title="$t('sections.about')" />
+                <div v-reveal style="--reveal-delay: 150ms" class="about__content-description">
                     <p v-for="(info, index) in about_data" :key="index">
                         {{ info?.translations?.[$i18n.locale] }}    
                     </p>

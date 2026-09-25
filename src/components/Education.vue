@@ -2,21 +2,21 @@
     <section id="education" class="education">
         <div class="container">
             <div class="education__content">
-                <SectionTitle :title="$t('sections.education')" />
+                <SectionTitle v-reveal style="--reveal-delay: 0ms" :title="$t('sections.education')" />
                 <div class="education__list">
                     <div
                         v-for="education in education_data"
                         :key="education.id"
                         class="education__list-item"
                     >
-                        <div class="education__title">
+                        <div v-reveal style="--reveal-delay: 150ms" class="education__title">
                             <h3>{{ education.translations?.[$i18n.locale].degree }}</h3>
                             <div>
                                 <p>{{ education.translations?.[$i18n.locale].place }}</p>
                                 <p>{{ education.period?.[$i18n.locale] }}</p>
                             </div>
                         </div>
-                        <p class="education__description">{{ education.translations?.[$i18n.locale].description }}</p>
+                        <p v-reveal style="--reveal-delay: 300ms" class="education__description">{{ education.translations?.[$i18n.locale].description }}</p>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,13 @@
 <template>
     <section id="skills" class="skills">
         <Marquee
+            v-reveal style="--reveal-delay: 0ms"
             :data="skills"
             :speed="60"
             direction="left"
         />
         <Marquee
+            v-reveal style="--reveal-delay: 150ms"
             :data="skills"
             :speed="60"
             direction="right"

@@ -2,21 +2,21 @@
     <section id="experience" class="experience">
         <div class="container">
             <div class="experience__content">
-                <SectionTitle :title="$t('sections.experience')" />
+                <SectionTitle v-reveal style="--reveal-delay: 0ms" :title="$t('sections.experience')" />
                 <div class="experience__list">
                     <div
                         v-for="job in jobs"
                         :key="job.id"
                         class="experience__list-item"
                     >
-                        <div class="experience__title">
+                        <div v-reveal style="--reveal-delay: 150ms" class="experience__title">
                             <h3>{{ job.translations?.[$i18n.locale].position }}</h3>
                             <div>
                                 <p>{{ job.company }}</p>
                                 <p>{{ job.period?.[$i18n.locale] }}</p>
                             </div>
                         </div>
-                        <p class="experience__description">{{ job.translations?.[$i18n.locale].description }}</p>
+                        <p v-reveal style="--reveal-delay: 300ms" class="experience__description">{{ job.translations?.[$i18n.locale].description }}</p>
                     </div>
                 </div>
                 <div class="experience__numbers">
@@ -25,8 +25,8 @@
                         :key="index"
                         class="experience__numbers-item"
                     >
-                        <span>{{ number.number }}</span>
-                        <p>{{ number.translations?.[$i18n.locale] }}</p>
+                        <span v-reveal style="--reveal-delay: 450ms">{{ number.number }}</span>
+                        <p v-reveal style="--reveal-delay: 600ms">{{ number.translations?.[$i18n.locale] }}</p>
                     </div>
                 </div>
             </div>

@@ -2,12 +2,12 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero__content">
-                <span>{{ heroData?.title }}</span>
-                <div class="hero__content-title">
-                    <h1>Sardor</h1>
-                    <h1>Ibragimov</h1>
+                <span v-reveal style="--reveal-delay: 0ms">{{ heroData?.title }}</span>
+                <div v-reveal class="hero__content-title">
+                    <h1 v-reveal style="--reveal-delay: 150ms">Sardor</h1>
+                    <h1 v-reveal style="--reveal-delay: 300ms">Ibragimov</h1>
                 </div>
-                <div class="hero__content-star">
+                <div v-reveal style="--reveal-delay: 450ms" class="hero__content-star">
                     <svg
                         width="48"
                         height="48"
@@ -24,8 +24,8 @@
                         />
                     </svg>
                 </div>
-                <p>{{ heroData?.description }}</p>
-                <a class="hero__content-download-cv" href="/Сардор_Ибрагимов_CV.pdf" download>
+                <p v-reveal style="--reveal-delay: 300ms">{{ heroData?.description }}</p>
+                <a v-reveal class="hero__content-download-cv" style="--reveal-delay: 750ms" href="/Сардор_Ибрагимов_CV.pdf" download>
                     <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <title/>
                         <g id="Complete">

@@ -2,9 +2,9 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact__content">
-                <SectionTitle :title="$t('sections.contact')" />
-                <p class="contact__content-description">{{ contact_data.translations?.[$i18n.locale].text }}</p>
-                <div class="contact__content-details">
+                <SectionTitle v-reveal style="--reveal-delay: 0ms" :title="$t('sections.contact')" />
+                <p v-reveal style="--reveal-delay: 150ms" class="contact__content-description">{{ contact_data.translations?.[$i18n.locale].text }}</p>
+                <div v-reveal style="--reveal-delay: 300ms" class="contact__content-details">
                     <span>{{ contact_data.translations?.[$i18n.locale].location }}</span>
                     <p><a :href="`mailto:${contact_data.links?.email}`">{{ contact_data.links?.email }}</a></p>
                     <p><a :href="`https://t.me/${contact_data.links?.telegram}`">@{{ contact_data.links?.telegram }}</a></p>
