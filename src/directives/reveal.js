@@ -1,5 +1,7 @@
 export default {
     mounted(el) {
+        el.classList.add('reveal')
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
